@@ -17,9 +17,18 @@ return result;
 
 // on peut mettre result *= i
 
+const computeFactorialRec = (n) => {
+  // This is the base case.
+  if (n === 0) return 1;
+  // This is the recursive one.
+  else return n * computeFactorialRec(n - 1);
+}
+
 console.log('computes the factorial of n');
 console.log('computes the factorial of -5');
 console.log(computeFactorialIt(-5));
 console.log('computes the factorial of 5');
 console.log(`iterative: ${computeFactorialIt(5)}`);
-/*2 façon différentes d'afficher le résultat*/
+/*2 façons différentes d'afficher le résultat*/
+console.log('computes the factorial of 5');
+console.log(`recursive: ${computeFactorialRec(5)}`);
