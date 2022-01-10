@@ -26,7 +26,27 @@ for (let i = 1; i < n; i += 1 ){
 };
 
 
+/*
+ex racine carrée de 9
+square(9,9) = 9*9!=9 no return
+square (9,8)= 9*9 !=9 no return
+square (9,7)= 7*7 != 9 no return
+square (9,6)= 6*6 !=9 no return
+square (9, 5)= 5*5 !=9 no return
+square (9, 4)= 4*4 != 9 no return
+suare (9, 3)= 3*3 = 9 result p = 3
+*/
+
+
+const computeSquareRootRec = (n, p=n) => {
+  //let p = n; ça ne marche pas il faut le mettre en haut // on commence par un p nombre tester pour savoir si c'est le résultat = n même si on sait d'avance que ce n'est pas le résultat
+  if (p * p === n) return p;
+  else return computeSquareRootRec(n, p - 1);
+};
+
+
 console.log('compute the square root of n');
 console.log(`for reference, the result of Math.sqrt: ${Math.sqrt(9)}`); // thx Antho
 console.log (computeSquareRoot(9));
 console.log(`iterative: ${computeSquareRoot(9)}`);
+console.log(`recursive: ${computeSquareRootRec(9)}`);
